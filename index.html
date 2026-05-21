@@ -1,67 +1,74 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title> Home Page of Nitin Khola </title> </head>
-    <!-- STYLES -->
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
-  <style>
-  h1 {
-    font-size: 3em;
-  }
-  h2 {
-    font-size: 2em;
-  }
-  p {
-    font-size: 1.5em;
-  }
-  .noto {
-    font-family: "Noto Sans", Verdana, Arial, Helvetica, sans-serifj;
-  }
-  .regular {
-    font-family: "Roboto", Verdana, Arial, Helvetica, sans-serifj;
-  }
-  .monospace {
-    font-family: "Lucida Console", "Courier New", monospace;
-  }
-
-  .container {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 1em;
-  }
-
-  .photo {
-    border-radius: 60%;
-  }
-
-  .photoframe {
-    flex-basis: 30%;
-  }
-
-  .text {
-    padding-left: 20px;
-  }
-  </style>
-  </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitin Khola - Principal Software Engineer</title>
+    <meta name="description" content="Personal website of Nitin Khola, Principal Software Engineer at MathWorks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <main class="container">
+        <header class="profile-header">
+            <img src="linkedinPicture.jpeg" alt="Nitin Khola" class="profile-pic">
+            <h1 class="name">Nitin Khola</h1>
+            <p class="title">Principal Software Engineer, Machine Learning @ MathWorks</p>
+            <div class="social-links">
+                <a href="linkedin_profile.pdf" target="_blank" class="link-item">Resume (PDF)</a>
+                <a href="https://www.linkedin.com/in/nkhola" target="_blank" class="link-item">LinkedIn</a>
+            </div>
+        </header>
 
-      <body>
-        <div class="container">
-            <div class="photoframe">
-              <img class="photo" src="img/linkedinPicture.jpeg" alt="nitinkhola">
-            </div> <!-- end photo -->
-            <div class="text">
-              <h1 class="noto"> Nitin Khola </h1>
-              <!-- <h2 class="header"> Experience </h2> -->
-              <p class="noto">
-              I am a software developer at MathWorks. I work in the area of machine learning and statistics.
-              </p>
-            </div> <!-- end text -->
-        </div> <!--- end container-->
-      </body>
-  </html>
+        <section class="substack-promo">
+            <div class="promo-content">
+                <h2>I write my technical stuff here</h2>
+                <p>Read my latest thoughts on machine learning, software engineering, and more on my Substack.</p>
+                <a href="https://www.khola.blog/" class="btn-primary" target="_blank">Visit Khola Blog</a>
+            </div>
+        </section>
 
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <div class="job-header">
+                    <h3>MathWorks</h3>
+                    <span class="duration">11 years</span>
+                </div>
+                <ul class="roles">
+                    <li>
+                        <h4>Principal Software Engineer, Machine Learning</h4>
+                        <span class="date">April 2026 - Present</span>
+                    </li>
+                    <li>
+                        <h4>Senior Software Engineer, Machine Learning</h4>
+                        <span class="date">May 2021 - May 2026</span>
+                    </li>
+                    <li>
+                        <h4>Machine Learning Engineer</h4>
+                        <span class="date">March 2017 - May 2021</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <div class="degree">
+                <h3>Purdue University</h3>
+                <p>Master's of Science, Mechanical Engineering (2013 - 2015)</p>
+            </div>
+            <div class="degree">
+                <h3>Indian Institute of Technology, Guwahati</h3>
+                <p>Bachelor of Technology, Mechanical Engineering (2009 - 2013)</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2026 Nitin Khola. All rights reserved.</p>
+        </footer>
+    </main>
+</body>
+</html>
