@@ -3,72 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nitin Khola - Principal Software Engineer</title>
+    <title>Nitin Khola - Post-Human Engineering</title>
     <meta name="description" content="Personal website of Nitin Khola, Principal Software Engineer at MathWorks.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="ambient-background"></div>
+    <div class="grid-overlay"></div>
+    
     <main class="container">
         <header class="profile-header">
-            <img src="linkedinPicture.jpeg" alt="Nitin Khola" class="profile-pic">
+            <div class="avatar-container">
+                <img src="linkedinPicture.jpeg" alt="Nitin Khola" class="profile-pic">
+                <div class="avatar-glow"></div>
+            </div>
             <h1 class="name">Nitin Khola</h1>
             <p class="title">Principal Software Engineer, Machine Learning @ MathWorks</p>
         </header>
 
-        <section class="substack-promo">
-            <p class="promo-label">Writing</p>
-            <p class="promo-text">Machine learning, software engineering, and more.</p>
-            <a href="https://www.khola.blog/" class="btn-primary" target="_blank" rel="noopener">Khola Blog →</a>
-        </section>
+        <section class="featured-section">
+            <div class="section-header">
+                <h2 class="section-title">Writing & Briefs</h2>
+                <div class="brand-badge">Post-Human Engineering</div>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <a href="https://www.khola.blog/" class="blog-card-link" target="_blank" rel="noopener">
+                    <div class="glass-card blog-card" id="latest-post-card">
+                        <div class="blog-header">
+                            <img src="https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc1245951-7811-417f-9bac-7e8c055ac43e_1280x1280.png" alt="Khola.Blog Logo" class="blog-logo">
+                            <span class="blog-name">Khola.Blog</span>
+                        </div>
+                        
+                        <div class="post-content" id="post-content-container">
+                            <div class="loader">Loading latest transmission...</div>
+                        </div>
+                    </div>
+                </a>
 
-        <section class="substack-promo" style="margin-top: 24px;">
-            <p class="promo-label">Projects</p>
-            <p class="promo-text">Daily automated AI & Finance Briefings.</p>
-            <a href="/ainews" class="btn-primary">AI News Briefings →</a>
+                <a href="https://nkhola.github.io/ainews" class="glass-card project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">The Post-Human Brief</h3>
+                        <p class="project-desc">Daily automated AI & Finance intelligence gathered by autonomous agents.</p>
+                    </div>
+                    <div class="project-arrow">→</div>
+                </a>
+            </div>
         </section>
 
         <section class="experience">
-            <h2>Experience</h2>
-            <div class="job">
-                <div class="job-header">
-                    <h3>MathWorks</h3>
-                    <span class="duration">11 years</span>
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="job-header">
+                        <h3>MathWorks</h3>
+                        <span class="duration">11 years</span>
+                    </div>
+                    <ul class="roles">
+                        <li>
+                            <h4>Principal Software Engineer, Machine Learning</h4>
+                            <span class="date">April 2026 - Present</span>
+                        </li>
+                        <li>
+                            <h4>Senior Software Engineer, Machine Learning</h4>
+                            <span class="date">May 2021 - May 2026</span>
+                        </li>
+                        <li>
+                            <h4>Machine Learning Engineer</h4>
+                            <span class="date">March 2017 - May 2021</span>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="roles">
-                    <li>
-                        <h4>Principal Software Engineer, Machine Learning</h4>
-                        <span class="date">April 2026 - Present</span>
-                    </li>
-                    <li>
-                        <h4>Senior Software Engineer, Machine Learning</h4>
-                        <span class="date">May 2021 - May 2026</span>
-                    </li>
-                    <li>
-                        <h4>Machine Learning Engineer</h4>
-                        <span class="date">March 2017 - May 2021</span>
-                    </li>
-                </ul>
             </div>
         </section>
 
         <section class="education">
-            <h2>Education</h2>
-            <div class="degree">
-                <h3>Purdue University</h3>
-                <p>Master of Science, Mechanical Engineering</p>
-            </div>
-            <div class="degree">
-                <h3>Indian Institute of Technology (IIT) Guwahati</h3>
-                <p>Bachelor of Technology, Mechanical Engineering</p>
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="degree">
+                        <h3>Purdue University</h3>
+                        <p>Master of Science, Mechanical Engineering</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="degree">
+                        <h3>Indian Institute of Technology (IIT) Guwahati</h3>
+                        <p>Bachelor of Technology, Mechanical Engineering</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <footer>
-            <a href="https://www.linkedin.com/in/nkhola" target="_blank" rel="noopener" class="link-item">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nkhola" target="_blank" rel="noopener" class="link-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                LinkedIn
+            </a>
         </footer>
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const fetchLatestPost = async () => {
+                const container = document.getElementById("post-content-container");
+                try {
+                    const response = await fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.khola.blog/feed");
+                    const data = await response.json();
+                    
+                    if (data.status === "ok" && data.items.length > 0) {
+                        const post = data.items[0];
+                        
+                        let thumbnailHtml = '';
+                        if (post.thumbnail && post.thumbnail.indexOf('sub') !== -1) {
+                            thumbnailHtml = `<div class="post-thumbnail-wrapper"><img src="${post.thumbnail}" alt="Post thumbnail" class="post-thumbnail"></div>`;
+                        } else {
+                             // Fallback image logic if missing
+                            thumbnailHtml = `<div class="post-thumbnail-wrapper"><div class="post-thumbnail-placeholder"></div></div>`;
+                        }
+
+                        container.innerHTML = `
+                            <div class="post-layout">
+                                ${thumbnailHtml}
+                                <div class="post-text">
+                                    <h3 class="post-title">${post.title}</h3>
+                                    <p class="post-desc">${post.description ? post.description.substring(0, 140) + '...' : ''}</p>
+                                    <span class="read-more">Read Transmission →</span>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        container.innerHTML = `<p class="post-error">Unable to load transmission.</p>`;
+                    }
+                } catch (error) {
+                    console.error("Error fetching Substack RSS:", error);
+                    container.innerHTML = `<p class="post-error">Unable to load transmission.</p>`;
+                }
+            };
+            
+            fetchLatestPost();
+        });
+    </script>
 </body>
 </html>
