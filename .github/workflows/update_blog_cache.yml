@@ -1,0 +1,38 @@
+name: Update Blog Cache
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run update script
+        run: python .scripts/update_blog_cache.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add img/latest_post.json img/latest_post_thumbnail.jpg
+          # If there are changes, commit and push
+          if git diff --staged --quiet; then
+            echo "No new posts to cache."
+          else
+            git commit -m "chore: update latest blog post cache"
+            git push
+          fi

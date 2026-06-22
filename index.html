@@ -114,35 +114,36 @@
             const fetchLatestPost = async () => {
                 const container = document.getElementById("post-content-container");
                 try {
-                    const response = await fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.khola.blog/feed");
-                    const data = await response.json();
+                    // Fetch locally cached post info populated by GitHub Actions
+                    const response = await fetch("img/latest_post.json");
+                    if (!response.ok) throw new Error("Local cache not found");
+                    const post = await response.json();
                     
-                    if (data.status === "ok" && data.items.length > 0) {
-                        const post = data.items[0];
-                        
-                        let thumbnailHtml = '';
-                        if (post.thumbnail && post.thumbnail.indexOf('sub') !== -1) {
-                            thumbnailHtml = `<div class="post-thumbnail-wrapper"><img src="${post.thumbnail}" alt="Post thumbnail" class="post-thumbnail"></div>`;
-                        } else {
-                             // Fallback image logic if missing
-                            thumbnailHtml = `<div class="post-thumbnail-wrapper"><div class="post-thumbnail-placeholder"></div></div>`;
-                        }
-
-                        container.innerHTML = `
-                            <div class="post-layout">
-                                ${thumbnailHtml}
-                                <div class="post-text">
-                                    <h3 class="post-title">${post.title}</h3>
-                                    <p class="post-desc">${post.description ? post.description.substring(0, 140) + '...' : ''}</p>
-                                    <span class="read-more">Read Transmission →</span>
-                                </div>
-                            </div>
-                        `;
+                    let thumbnailHtml = '';
+                    if (post.thumbnail) {
+                        thumbnailHtml = `<div class="post-thumbnail-wrapper"><img src="${post.thumbnail}" alt="Post thumbnail" class="post-thumbnail"></div>`;
                     } else {
-                        container.innerHTML = `<p class="post-error">Unable to load transmission.</p>`;
+                        thumbnailHtml = `<div class="post-thumbnail-wrapper"><div class="post-thumbnail-placeholder"></div></div>`;
+                    }
+
+                    container.innerHTML = `
+                        <div class="post-layout">
+                            ${thumbnailHtml}
+                            <div class="post-text">
+                                <h3 class="post-title">${post.title}</h3>
+                                <p class="post-desc">${post.description ? post.description.substring(0, 140) + '...' : ''}</p>
+                                <span class="read-more">Read Transmission →</span>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Update the card link to point directly to the specific post
+                    const cardLink = document.querySelector(".blog-card-link");
+                    if (cardLink && post.link) {
+                        cardLink.href = post.link;
                     }
                 } catch (error) {
-                    console.error("Error fetching Substack RSS:", error);
+                    console.error("Error fetching cached post:", error);
                     container.innerHTML = `<p class="post-error">Unable to load transmission.</p>`;
                 }
             };
