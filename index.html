@@ -5,56 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nitin Khola - Post-Human Engineering</title>
     <meta name="description" content="Personal website of Nitin Khola, Principal Software Engineer at MathWorks.">
+    <script>(function(){var t=null;try{t=localStorage.getItem('phb-theme')}catch(e){}if(t!=='dark'&&t!=='light'){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'}document.documentElement.setAttribute('data-theme',t);})();</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="ambient-background"></div>
-    <div class="grid-overlay"></div>
-    
     <main class="container">
+        <div class="top-bar">
+            <span class="kicker">Post-Human Engineering</span>
+            <button class="theme-toggle" onclick="phbToggleTheme()" aria-label="Toggle color theme" title="Toggle theme">
+                <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+                <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+
         <header class="profile-header">
-            <div class="avatar-container">
-                <img src="linkedinPicture.jpeg" alt="Nitin Khola" class="profile-pic">
-                <div class="avatar-glow"></div>
-            </div>
+            <img src="linkedinPicture.jpeg" alt="Nitin Khola" class="profile-pic">
             <h1 class="name">Nitin Khola</h1>
             <p class="title">Principal Software Engineer, Machine Learning @ MathWorks</p>
         </header>
 
         <section class="featured-section">
             <div class="section-header">
-                <h2 class="section-title">Writing & Briefings</h2>
-                <div class="brand-badge">Post-Human Engineering</div>
+                <h2 class="section-title">Writing &amp; Briefings</h2>
+                <span class="brand-badge">Post-Human Engineering</span>
             </div>
-            
-            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-                <a href="https://www.khola.blog/" class="blog-card-link" target="_blank" rel="noopener">
-                    <div class="glass-card blog-card" id="latest-post-card">
-                        <div class="blog-header">
-                            <img src="https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc1245951-7811-417f-9bac-7e8c055ac43e_1280x1280.png" alt="Khola.Blog Logo" class="blog-logo">
-                            <span class="blog-name">Khola.Blog</span>
-                        </div>
-                        
-                        <div class="post-content" id="post-content-container">
-                            <div class="loader">Loading latest transmission...</div>
-                        </div>
+
+            <div class="card-stack">
+                <a href="https://www.khola.blog/" class="card blog-card" id="latest-post-card" target="_blank" rel="noopener">
+                    <div class="blog-header">
+                        <img src="https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc1245951-7811-417f-9bac-7e8c055ac43e_1280x1280.png" alt="Khola.Blog Logo" class="blog-logo">
+                        <span class="blog-name">Khola.Blog</span>
+                    </div>
+
+                    <div class="post-content" id="post-content-container">
+                        <div class="loader">Loading latest transmission&hellip;</div>
                     </div>
                 </a>
 
-                <a href="https://nkhola.github.io/ainews" class="glass-card project-card" style="align-items: center;">
-                    <div style="display: flex; gap: 1.25rem; align-items: center; flex: 1;">
-                        <div class="post-thumbnail-wrapper" style="width: 70px; height: 70px; border-radius: 8px; flex-shrink: 0; display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.02);">
-                            <img src="https://nkhola.github.io/ainews/img/logo_256.png" alt="The Post-Human Briefing Logo" style="max-width: 100%; max-height: 100%; border-radius: 4px; object-fit: contain;">
+                <a href="https://nkhola.github.io/ainews" class="card project-card">
+                    <div class="project-layout">
+                        <div class="project-logo-wrapper">
+                            <img src="https://nkhola.github.io/ainews/img/logo_256.png" alt="The Post-Human Briefing Logo">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title" style="margin-bottom: 0.25rem;">The Post-Human Briefing</h3>
-                            <p class="project-desc" style="margin-bottom: 0;">Daily automated AI & Finance intelligence gathered by autonomous agents.</p>
+                            <h3 class="project-title">The Post-Human Briefing</h3>
+                            <p class="project-desc">Twice-daily AI &amp; markets intelligence with narrated audio, plus a weekly two-voice podcast. Generated end-to-end by autonomous agents.</p>
                         </div>
                     </div>
-                    <div class="project-arrow" style="margin-left: 1rem;">→</div>
+                    <div class="project-arrow">&rarr;</div>
                 </a>
             </div>
         </section>
@@ -108,13 +109,20 @@
 
         <footer>
             <a href="https://www.linkedin.com/in/nkhola" target="_blank" rel="noopener" class="link-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 LinkedIn
             </a>
         </footer>
     </main>
 
     <script>
+        function phbToggleTheme() {
+            var r = document.documentElement;
+            var t = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            r.setAttribute('data-theme', t);
+            try { localStorage.setItem('phb-theme', t); } catch (e) {}
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
             const fetchLatestPost = async () => {
                 const container = document.getElementById("post-content-container");
@@ -123,7 +131,7 @@
                     const response = await fetch("img/latest_post.json");
                     if (!response.ok) throw new Error("Local cache not found");
                     const post = await response.json();
-                    
+
                     let thumbnailHtml = '';
                     if (post.thumbnail) {
                         thumbnailHtml = `<div class="post-thumbnail-wrapper"><img src="${post.thumbnail}" alt="Post thumbnail" class="post-thumbnail"></div>`;
@@ -137,13 +145,13 @@
                             <div class="post-text">
                                 <h3 class="post-title">${post.title}</h3>
                                 <p class="post-desc">${post.description ? post.description.substring(0, 140) + '...' : ''}</p>
-                                <span class="read-more">Read Transmission →</span>
+                                <span class="read-more">Read Transmission &rarr;</span>
                             </div>
                         </div>
                     `;
-                    
+
                     // Update the card link to point directly to the specific post
-                    const cardLink = document.querySelector(".blog-card-link");
+                    const cardLink = document.getElementById("latest-post-card");
                     if (cardLink && post.link) {
                         cardLink.href = post.link;
                     }
@@ -152,7 +160,7 @@
                     container.innerHTML = `<p class="post-error">Unable to load transmission.</p>`;
                 }
             };
-            
+
             fetchLatestPost();
         });
     </script>
