@@ -2,12 +2,13 @@ name: Update Blog Cache
 
 on:
   schedule:
-    # Run every 6 hours
-    - cron: '0 */6 * * *'
+    # Hourly: runs take ~10s and exit early when nothing changed
+    - cron: '13 * * * *'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   update-cache:
@@ -35,4 +36,16 @@ jobs:
           else
             git commit -m "chore: update latest blog post cache"
             git push
+            echo "PUSHED=1" >> "$GITHUB_ENV"
           fi
+
+      # Push-triggered Pages builds can hang (observed: 18h stuck in
+      # "building"); an explicit build request is deterministic and
+      # also recovers a hung build.
+      - name: Ensure Pages deployment
+        if: env.PUSHED == '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" ||
+            echo 'Pages build request failed; push-triggered build should cover it.'

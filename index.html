@@ -127,14 +127,19 @@
             const fetchLatestPost = async () => {
                 const container = document.getElementById("post-content-container");
                 try {
-                    // Fetch locally cached post info populated by GitHub Actions
-                    const response = await fetch("img/latest_post.json");
+                    // Fetch locally cached post info populated by GitHub Actions.
+                    // no-store: the card must reflect the latest deploy, not the
+                    // browser's cached copy of the JSON.
+                    const response = await fetch("img/latest_post.json", { cache: "no-store" });
                     if (!response.ok) throw new Error("Local cache not found");
                     const post = await response.json();
 
                     let thumbnailHtml = '';
                     if (post.thumbnail) {
-                        thumbnailHtml = `<div class="post-thumbnail-wrapper"><img src="${post.thumbnail}" alt="Post thumbnail" class="post-thumbnail"></div>`;
+                        // pubDate as cache-buster: the thumbnail path is reused
+                        // across posts, so the URL must change when the post does
+                        const thumbSrc = post.thumbnail + "?v=" + encodeURIComponent(post.pubDate || "");
+                        thumbnailHtml = `<div class="post-thumbnail-wrapper"><img src="${thumbSrc}" alt="Post thumbnail" class="post-thumbnail"></div>`;
                     } else {
                         thumbnailHtml = `<div class="post-thumbnail-wrapper"><div class="post-thumbnail-placeholder"></div></div>`;
                     }
