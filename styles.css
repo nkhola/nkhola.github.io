@@ -323,6 +323,48 @@ a:hover { color: var(--accent-hover); }
     object-fit: contain;
 }
 
+/* Pop culture card: a fan of real covers instead of a logo, since the site
+   has no mark of its own and the artwork says what it is faster than words.
+   Sized to match .project-logo-wrapper so all three cards line up. */
+.poster-fan {
+    flex-shrink: 0;
+    display: flex;
+    height: 64px;
+    padding-right: 6px;
+}
+
+.poster-fan img {
+    width: 43px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 1px solid var(--hairline);
+    background: var(--surface);
+    transition: transform 0.28s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Overlap leaves ~23px of each cover showing. Tighter than this and they
+   read as slivers rather than as covers. */
+.poster-fan img:not(:first-child) { margin-left: -20px; }
+
+/* On narrow screens the fan competes with the description, so drop the last
+   cover and tighten the rest. */
+@media (max-width: 480px) {
+    .poster-fan img:last-child { display: none; }
+    .poster-fan img:not(:first-child) { margin-left: -24px; }
+}
+
+/* Splay on hover. Each card shifts a little further than the one before it,
+   so the stack opens rather than sliding as a block. */
+.project-card:hover .poster-fan img:nth-child(2) { transform: translateX(5px); }
+.project-card:hover .poster-fan img:nth-child(3) { transform: translateX(10px); }
+.project-card:hover .poster-fan img:nth-child(4) { transform: translateX(15px); }
+
+@media (prefers-reduced-motion: reduce) {
+    .poster-fan img { transition: none; }
+    .project-card:hover .poster-fan img { transform: none; }
+}
+
 .project-title {
     font-family: var(--font-serif);
     font-size: 1.15rem;
